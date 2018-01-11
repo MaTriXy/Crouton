@@ -14,28 +14,15 @@
  * limitations under the License.
  */
 
-subprojects {
-version = '1.8.5'
+package de.keyboardsurfer.android.widget.crouton;
 
-  buildscript {
-    repositories {
-      mavenCentral()
-      mavenLocal()
-    }
+/** Provides callback methods on major lifecycle events of a {@link Crouton}. */
+public interface LifecycleCallback {
+  /** Will be called when your Crouton has been displayed. */
+  public void onDisplayed();
 
-    dependencies {
-      classpath 'com.android.tools.build:gradle:1.0.0'
-      classpath 'com.github.dcendents:android-maven-plugin:1.2'
-    }
-  }
+  /** Will be called when your {@link Crouton} has been removed. */
+  public void onRemoved();
 
-  repositories {
-    mavenCentral()
-    mavenLocal()
-  }
-}
-
-task wrapper(type: Wrapper) {
-  description 'Generates the gradle wrapper'
-  gradleVersion = '2.2.1'
+  //public void onCeasarDressing();
 }
